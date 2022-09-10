@@ -1,8 +1,11 @@
 const container = document.querySelector('.container')
 const biggerContainer = document.querySelector('.bigger-container')
 const activate = document.querySelector('.activate')
+const click = new Audio('detonate.m4a')
+const tada = new Audio('tada.mp3')
 
 activate.addEventListener('click',()=>{
+	click.play()
 	setTimeout(()=>activate.style.display = 'none', 100)
 	setTimeout(()=>{
 		biggerContainer.style.display = 'block'
@@ -25,10 +28,12 @@ const interval = ()=>setInterval(()=>{
 		case false:
 			if (count == 125){
 				clearInterval(interval)
+				tada.play()
 			}
 			break
 		case true:
 			if (count == 63){
+				tada.play()
 				clearInterval(interval)
 			}
 	}
