@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Muli', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	height: 100vh;
+	margin: 0;
+	background-color:  #00FFFF;
+}
+.bigger-container{
+	/*background-color: #F39C9C;*/
+	border-radius: 10px;	
+}
+
+.container{
+	box-shadow: 0px 1px 5px #C70C0C;
+	width: 600px;
+	height: 600px;
+	border-radius: 10px;
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+	overflow: scroll;
+	text-align: justify;
+	font-size: 4px;
+	padding: 0;
+	background-repeat: no-repeat;
+	overflow: clip;
+	background-image: url('BirthdayMeme1.jpg');
+	background-position: center;
+	background-size: cover;
+	background-clip: text;
+	color: transparent;
+	-webkit-background-clip: text;
+	white-space: initial;
+}
+.container span{
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 480px){
+	.container{
+		width: 300px;
+		height: 300px;
+	}
+}
