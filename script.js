@@ -1,23 +1,33 @@
 const container = document.querySelector('.container')
 const biggerContainer = document.querySelector('.bigger-container')
-var count = 0;
-var height = container.offsetHeight
-var part = height == 600? 100 / 125: 100 / 62
+const activate = document.querySelector('.activate')
 
-const interval = setInterval(()=>{
+activate.addEventListener('click',()=>{
+	setTimeout(()=>activate.style.display = 'none', 100)
+	setTimeout(()=>{
+		biggerContainer.style.display = 'block'
+		setTimeout(()=>interval(),250)
+	},400)
+})
+
+var count = 0;
+var smallScreen = document.querySelector('body').offsetWidth >480? false: true
+var part = smallScreen? 100 / 62: 100 / 125
+
+const interval = ()=>setInterval(()=>{
 
 	const text = document.createTextNode('HappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthday');
-	appendLine(container,text)
-	console.log(`linear-gradient:to bottom, #F39C9C 0%, #F39C9C ${Math.ceil(count*part)}%`)
+	container.appendChild(text)
+	container.appendChild(document.createElement('br'))
 	biggerContainer.style.backgroundImage = `linear-gradient(to bottom, #F39C9C 0%, #F39C9C ${Math.ceil(count*part)}%, #fff ${Math.ceil(count*part)}%, #fff 100%)`
 	count++
-	switch (height){
-		case 600:
+	switch (smallScreen){
+		case false:
 			if (count == 125){
 				clearInterval(interval)
 			}
 			break
-		case 300:
+		case true:
 			if (count == 63){
 				clearInterval(interval)
 			}
@@ -25,7 +35,6 @@ const interval = setInterval(()=>{
 		
 
 },24)
-interval
 
 function appendLine(parent,textElement){
 	parent.appendChild(textElement)

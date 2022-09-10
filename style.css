@@ -17,7 +17,8 @@ body{
 }
 .bigger-container{
 	/*background-color: #F39C9C;*/
-	border-radius: 10px;	
+	border-radius: 10px;
+	display: none;
 }
 
 .container{
@@ -45,6 +46,19 @@ body{
 .container span{
 	margin: 0;
 	padding: 0;
+}
+.activate{
+	width: 120px;
+	height: 80px;
+	border-radius: 20px;
+	background-color: mediumvioletred;
+	cursor: pointer;
+	color: white;
+	font-size: 24px;
+	border: 0;
+}
+.activate:active{
+	transform: scale(0.98);
 }
 
 @media (max-width: 480px){
