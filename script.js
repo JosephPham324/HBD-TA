@@ -21,7 +21,7 @@ const interval = ()=>{
 	const thisInterval = setInterval(()=>{
 		const text = document.createTextNode('HappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthdayHappyBirthday');
 		appendLine(container, text)
-		biggerContainer.style.backgroundImage = `linear-gradient(to bottom, #F39C9C 0%, #F39C9C ${Math.ceil(count*part)}%, #fff ${Math.ceil(count*part)}%, #fff 100%)`
+		biggerContainer.style.backgroundImage = `linear-gradient(to bottom, #F39C9C 0%, #F39C9C ${Math.ceil(count*part)}%, #00FFFF ${Math.ceil(count*part)}%, #00FFFF 100%)`
 		count++
 		if (smallScreen && count == 63){
 					tada.play()
